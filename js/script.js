@@ -13,3 +13,23 @@ if(menuToggle && siteNav){
         });
     });
 }
+
+/* Events Carousel - Simple scroll implementation */
+const eventsTrack = document.getElementById('eventsTrack');
+const eventsPrev = document.getElementById('eventsPrev');
+const eventsNext = document.getElementById('eventsNext');
+
+if(eventsTrack && eventsPrev && eventsNext){
+    function getScrollAmount(){
+        const card = eventsTrack.querySelector('.event-card');
+        return card ? card.offsetWidth + 18 : 250;
+    }
+
+    eventsPrev.addEventListener('click', () => {
+        eventsTrack.scrollLeft -= getScrollAmount();
+    });
+
+    eventsNext.addEventListener('click', () => {
+        eventsTrack.scrollLeft += getScrollAmount();
+    });
+}

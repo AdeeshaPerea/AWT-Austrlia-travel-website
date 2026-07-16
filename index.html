@@ -27,11 +27,11 @@
 
             <ul>
 
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
 
-                <li><a href="#">About</a></li>
+                <li><a href="about.html">About</a></li>
 
-                <li><a href="#">Brands</a></li>
+                <li><a href="brands.html">Brands</a></li>
 
                 <li><a href="#">News</a></li>
 
@@ -43,7 +43,7 @@
 
                 <li><a href="#">Careers</a></li>
 
-                <li><a href="#">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
 
             </ul>
 
@@ -64,6 +64,10 @@
     <!-- Hero -->
 
     <section class="hero">
+
+        <video class="hero-video" autoplay muted loop>
+            <source src="image/363061.mp4" type="video/mp4">
+        </video>
 
         <div class="overlay"></div>
 
@@ -182,19 +186,16 @@
     <div class="brand-container">
 
         <!-- AWT -->
-        <div class="brand-card awt">
-            <img src="images/brand1.jpg" alt="Amazing World Travel">
-
-            <div class="brand-content">
-
-                <div class="brand-logo">
-                    <div class="badge-group">
-                        <span style="background:#2b7cff;">A</span>
-                        <span style="background:#facc15;color:#0A2C67;">W</span>
-                        <span style="background:#22c55e;">T</span>
-                    </div>
+        <div class="brand-card awt" style="background-image:url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&q=80');">
+            <div class="brand-logo-top">
+                <div class="badge-group">
+                    <span style="background:#2b7cff;">A</span>
+                    <span style="background:#facc15;color:#0A2C67;">W</span>
+                    <span style="background:#22c55e;">T</span>
                 </div>
+            </div>
 
+            <div class="brand-content-overlay">
                 <h3>Amazing World Travel</h3>
 
                 <p>
@@ -213,11 +214,12 @@
         </div>
 
         <!-- FLIGHTROO -->
-        <div class="brand-card flightroo">
-            <img src="images/brand2.jpg" alt="Flightroo">
+        <div class="brand-card flightroo" style="background-image:url('https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=500&q=80');">
+            <div class="brand-logo-top logo-text">
+                <strong>FLIGHTROO</strong>
+            </div>
 
-            <div class="brand-content">
-
+            <div class="brand-content-overlay">
                 <h3>Flightroo</h3>
 
                 <p>
@@ -236,11 +238,12 @@
         </div>
 
         <!-- TripClub -->
-        <div class="brand-card tripclub">
-            <img src="images/brand3.jpg" alt="TripClub.com">
+        <div class="brand-card tripclub" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80');">
+            <div class="brand-logo-top logo-text" style="color: #7C3AED;">
+                <strong>TripClub.com</strong>
+            </div>
 
-            <div class="brand-content">
-
+            <div class="brand-content-overlay">
                 <h3>TripClub.com</h3>
 
                 <p>
@@ -259,11 +262,12 @@
         </div>
 
         <!-- Rentaweel -->
-        <div class="brand-card rentaweel">
-            <img src="images/brand4.jpg" alt="Rentaweel.com">
+        <div class="brand-card rentaweel" style="background-image:url('https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&q=80');">
+            <div class="brand-logo-top logo-text" style="color: #F07D1A;">
+                <strong>rentaweel.com</strong>
+            </div>
 
-            <div class="brand-content">
-
+            <div class="brand-content-overlay">
                 <h3>Rentaweel.com</h3>
 
                 <p>
@@ -412,6 +416,8 @@
     </div>
  
 </section>
+
+
 <script>
 const destTrack = document.getElementById('destTrack');
 const destPrev  = document.getElementById('destPrev');
@@ -423,11 +429,11 @@ function destScrollAmount(){
 }
  
 destPrev.addEventListener('click', () => {
-    destTrack.scrollBy({ left: -destScrollAmount(), behavior: 'smooth' });
+    destTrack.scrollLeft -= destScrollAmount();
 });
  
 destNext.addEventListener('click', () => {
-    destTrack.scrollBy({ left: destScrollAmount(), behavior: 'smooth' });
+    destTrack.scrollLeft += destScrollAmount();
 });
  
 /* Scroll-reveal for cards and trust items */

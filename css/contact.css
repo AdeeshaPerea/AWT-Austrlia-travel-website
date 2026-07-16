@@ -1,0 +1,536 @@
+/* ==========================================
+   GOOGLE FONT
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fff;
+    color:#fff;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:25px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo img{
+    width:170px;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+nav ul li a{
+    color:#fff;
+    font-size:14px;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#FFD23F;
+}
+
+.active a{
+    color:#FFD23F;
+}
+
+/* ==========================================
+   HEADER RIGHT
+========================================== */
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.phone{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    font-size:15px;
+    font-weight:500;
+}
+
+.phone i{
+    color:#FFD23F;
+}
+
+.partner-btn{
+    background:#FFD23F;
+    color:#111;
+    padding:14px 28px;
+    border-radius:50px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.35s;
+}
+
+.partner-btn:hover{
+    background:white;
+    transform:translateY(-3px);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.contact-hero{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+
+    background:url("images/hero.jpg") center center/cover no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    overflow:hidden;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+
+/* ==========================================
+   HERO CONTENT
+========================================== */
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    margin-top:80px;
+}
+
+.hero-content h4{
+    color:#FFD23F;
+    font-size:18px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.hero-content h1{
+    font-size:68px;
+    line-height:1.15;
+    font-weight:800;
+}
+
+.hero-content h1 span{
+    display:block;
+}
+
+.hero-content p{
+    width:700px;
+    max-width:95%;
+    margin:30px auto 0;
+    color:#eee;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* ==========================================
+   AIRPLANE
+========================================== */
+
+.airplane{
+    margin-top:60px;
+    font-size:48px;
+    color:#FFD23F;
+    animation:fly 4s infinite ease-in-out;
+}
+
+@keyframes fly{
+
+    0%{
+        transform:translateX(-30px) rotate(-8deg);
+    }
+
+    50%{
+        transform:translateX(30px) rotate(8deg);
+    }
+
+    100%{
+        transform:translateX(-30px) rotate(-8deg);
+    }
+
+}
+
+/*=========================================
+    CONTACT BOXES
+=========================================*/
+
+.contact-boxes{
+    position:relative;
+    z-index:5;
+
+    width:90%;
+    max-width:1300px;
+
+    margin-top:80px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+
+    padding-bottom:60px;
+}
+
+.box{
+
+    background:#ffffff;
+    color:#222;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    transition:.35s;
+}
+
+.box:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 55px rgba(0,0,0,.20);
+
+}
+
+.icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:28px;
+
+    flex-shrink:0;
+
+}
+
+.yellow{
+
+    background:#FFD54A;
+    color:#0A2C67;
+
+}
+
+.whatsapp{
+
+    background:#25D366;
+    color:white;
+
+}
+
+.box h5{
+
+    color:#888;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+    margin-bottom:10px;
+
+}
+
+.box h3{
+
+    color:#0A2C67;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.box p{
+
+    color:#777;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+/*=========================================
+    CARD HOVER
+=========================================*/
+
+.box:hover .icon{
+
+    transform:rotate(12deg) scale(1.08);
+
+    transition:.4s;
+
+}
+
+.box:hover h3{
+
+    color:#f4b400;
+
+}
+
+.box:hover p{
+
+    color:#444;
+
+}
+
+/*=========================================
+    SMALL ANIMATION
+=========================================*/
+
+.box{
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+.box:nth-child(2){
+
+    animation-delay:.15s;
+
+}
+
+.box:nth-child(3){
+
+    animation-delay:.30s;
+
+}
+
+.box:nth-child(4){
+
+    animation-delay:.45s;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================
+    RESPONSIVE
+=========================================*/
+
+@media(max-width:1200px){
+
+    .hero-content h1{
+
+        font-size:55px;
+
+    }
+
+    .contact-boxes{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    header{
+
+        flex-direction:column;
+        gap:25px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+        justify-content:center;
+
+    }
+
+    .hero-content{
+
+        margin-top:180px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:46px;
+
+    }
+
+    .hero-content p{
+
+        font-size:16px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero-content h4{
+
+        font-size:15px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:36px;
+
+    }
+
+    .contact-boxes{
+
+        grid-template-columns:1fr;
+
+        width:92%;
+
+    }
+
+    .box{
+
+        padding:25px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    header{
+
+        padding:20px;
+
+    }
+
+    .logo img{
+
+        width:140px;
+
+    }
+
+    .partner-btn{
+
+        display:none;
+
+    }
+
+    .phone{
+
+        display:none;
+
+    }
+
+    nav ul{
+
+        gap:15px;
+
+    }
+
+    nav ul li a{
+
+        font-size:13px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:30px;
+
+    }
+
+    .hero-content p{
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+    .icon{
+
+        width:60px;
+        height:60px;
+
+        font-size:22px;
+
+    }
+
+    .box h3{
+
+        font-size:19px;
+
+    }
+
+}
