@@ -33,3 +33,10 @@ if(eventsTrack && eventsPrev && eventsNext){
         eventsTrack.scrollLeft += getScrollAmount();
     });
 }
+// Mobile menu toggle
+const navToggle = document.getElementById('navToggle');
+const siteNav = document.getElementById('siteNav');
+
+navToggle.addEventListener('click', () => {
+  siteNav.classList.toggle('open');
+});
