@@ -343,39 +343,39 @@ export default function About() {
       </section>
 
       {/* NEWSLETTER CTA SECTION */}
-      <section class="newsletter-section">
-        <div class="newsletter-content">
-          <div class="newsletter-left">
+      <section className="newsletter-section">
+        <div className="newsletter-banner">
+          <div className="newsletter-left">
             <h2>Let's Build the Future of Travel Together</h2>
-            <p>Partner with AWT Australia and be part of a global travel network built on trust, innovation and shared success.</p>
+            <p>
+              Partner with AWT Australia and be part of a global travel network built on trust, innovation and shared success.
+            </p>
+          </div>
 
-            <form class="newsletter-form" onSubmit={handleSubscribe}>
+          <div className="newsletter-right">
+            <form className="newsletter-form" onSubmit={handleSubscribe}>
               <input type="email" placeholder="Enter your email address" required />
-              <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
+              <button type="submit" className="subscribe-btn">SUBSCRIBE</button>
             </form>
 
-            <div class="newsletter-benefits">
-              <div class="benefit">
-                <i class="fa-solid fa-gift"></i>
+            <div className="newsletter-benefits">
+              <div className="benefit">
+                <i className="fa-solid fa-gift"></i>
                 <span>Exclusive Offers</span>
               </div>
-              <div class="benefit">
-                <i class="fa-solid fa-lightbulb"></i>
+              <div className="benefit">
+                <i className="fa-solid fa-lightbulb"></i>
                 <span>Travel Inspiration</span>
               </div>
-              <div class="benefit">
-                <i class="fa-solid fa-chart-line"></i>
+              <div className="benefit">
+                <i className="fa-solid fa-chart-line"></i>
                 <span>Industry Insights</span>
               </div>
-              <div class="benefit">
-                <i class="fa-solid fa-handshake"></i>
+              <div className="benefit">
+                <i className="fa-solid fa-handshake"></i>
                 <span>Partner Updates</span>
               </div>
             </div>
-          </div>
-
-          <div class="newsletter-right">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Travel" />
           </div>
         </div>
       </section>
