@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const siteNavRef = useRef(null);
   const menuToggleRef = useRef(null);
@@ -15,6 +16,19 @@ export default function Navbar() {
   const closeNav = () => {
     setIsMenuOpen(false);
   };
+
+  // Scroll effect for glassmorphic navbar background change
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -64,86 +78,108 @@ export default function Navbar() {
 
   const isContactPage = location.pathname === '/contact';
 
+  const navItems = [
+    { path: '/', label: 'Home', icon: 'fa-house' },
+    { path: '/about', label: 'About', icon: 'fa-circle-info' },
+    { path: '/brands', label: 'Brands', icon: 'fa-building-user' },
+    { path: '/news', label: 'News', icon: 'fa-newspaper' },
+    { path: '/exhibitions', label: 'Exhibitions', icon: 'fa-calendar-days' },
+    { path: '/partnerships', label: 'Partnerships', icon: 'fa-handshake' },
+    { path: '/team', label: 'Team', icon: 'fa-users' },
+    { path: '/careers', label: 'Careers', icon: 'fa-briefcase' },
+    { path: '/contact', label: 'Contact', icon: 'fa-envelope' },
+  ];
+
   return (
-    <header class="navbar">
-      <div class="logo">
-        <NavLink to="/" onClick={closeNav}>
-          <h2>AWTAustralia</h2>
-          {isContactPage && <span class="logo-tagline">the travel mantra</span>}
-        </NavLink>
-      </div>
+    <>
+      {/* Crystal Glass Backdrop Overlay */}
+      <div
+        className={`nav-backdrop ${isMenuOpen ? 'active' : ''}`}
+        onClick={closeNav}
+        aria-hidden="true"
+      />
 
-      <nav id="siteNav" ref={siteNavRef} className={isMenuOpen ? 'active' : ''}>
-        <ul>
-          <li>
-            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/brands" className={({ isActive }) => (isActive ? 'active' : '')}>
-              Brands
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/news" className={({ isActive }) => (isActive ? 'active' : '')}>
-              News
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/exhibitions" className={({ isActive }) => (isActive ? 'active' : '')}>
-              Exhibitions
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/partnerships" className={({ isActive }) => (isActive ? 'active' : '')}>
-              Partnerships
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/team" className={({ isActive }) => (isActive ? 'active' : '')}>
-              Team
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/careers" className={({ isActive }) => (isActive ? 'active' : '')}>
-              Careers
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>
-              Contact
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+      <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="logo">
+          <NavLink to="/" onClick={closeNav}>
+            <h2>AWTAustralia</h2>
+            {isContactPage && <span className="logo-tagline">the travel mantra</span>}
+          </NavLink>
+        </div>
 
-      <div class="nav-right">
-        {isContactPage && (
-          <a href="tel:1300589652" class="nav-phone">
-            <i class="fa-solid fa-phone"></i> 1300 589 652
-          </a>
-        )}
-        <button class="btn">Partner With Us</button>
-      </div>
+        {/* Crystal Glass Navigation Drawer */}
+        <nav id="siteNav" ref={siteNavRef} className={isMenuOpen ? 'active' : ''}>
+          {/* Drawer Top Header for Mobile */}
+          <div className="drawer-header">
+            <div className="drawer-logo">
+              <h2>AWTAustralia</h2>
+              <span className="drawer-tagline">The Travel Mantra</span>
+            </div>
+            <button
+              className="drawer-close"
+              onClick={closeNav}
+              aria-label="Close menu"
+            >
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          </div>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        ref={menuToggleRef}
-        aria-label="Toggle menu"
-        aria-expanded={isMenuOpen ? 'true' : 'false'}
-        onClick={toggleNav}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </header>
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.path}>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
+                  <span className="link-content">
+                    <i className={`fa-solid ${item.icon} nav-icon`}></i>
+                    <span>{item.label}</span>
+                  </span>
+                  <i className="fa-solid fa-chevron-right nav-arrow"></i>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+
+          {/* Drawer Footer Actions for Mobile */}
+          <div className="drawer-footer">
+            <button className="btn btn-drawer">
+              <i className="fa-solid fa-handshake"></i> Partner With Us
+            </button>
+            <div className="drawer-contact">
+              <a href="tel:1300589652">
+                <i className="fa-solid fa-phone"></i> 1300 589 652
+              </a>
+              <a href="mailto:info@awtaustralia.com">
+                <i className="fa-solid fa-envelope"></i> info@awtaustralia.com
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <div className="nav-right">
+          {isContactPage && (
+            <a href="tel:1300589652" className="nav-phone">
+              <i className="fa-solid fa-phone"></i> 1300 589 652
+            </a>
+          )}
+          <button className="btn">Partner With Us</button>
+        </div>
+
+        {/* Crystal Glass Animated Hamburger Button */}
+        <button
+          className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
+          id="menuToggle"
+          ref={menuToggleRef}
+          aria-label="Toggle menu"
+          aria-expanded={isMenuOpen ? 'true' : 'false'}
+          onClick={toggleNav}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </header>
+    </>
   );
 }

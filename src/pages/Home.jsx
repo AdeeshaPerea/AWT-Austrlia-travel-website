@@ -6,8 +6,8 @@ export default function Home() {
     <>
       {/* Hero */}
       <section class="hero">
-        <video class="hero-video" autoPlay muted loop playsInline>
-          <source src="/image/363061.mp4" type="video/mp4" />
+        <video class="hero-video" autoPlay muted loop playsInline poster="/image/home.png">
+          <img src="/image/home.png" alt="AWT Australia Hero" class="hero-video" />
         </video>
 
         <div class="overlay"></div>
@@ -133,20 +133,19 @@ export default function Home() {
             </div>
           </div>
 
-          {/* TripClub */}
+          {/* TripoClub */}
           <div
             class="brand-card tripclub"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80')"
+              backgroundImage: "url('/image/tripoclub.jpeg')"
             }}
           >
             <div class="brand-logo-top logo-text" style={{ color: '#7C3AED' }}>
-              <strong>TripClub.com</strong>
+              <strong>TripoClub.com</strong>
             </div>
 
             <div class="brand-content-overlay">
-              <h3>TripClub.com</h3>
+              <h3>TripoClub.com</h3>
               <p>
                 Your online travel booking companion for flights, hotels and unforgettable tours.
               </p>
