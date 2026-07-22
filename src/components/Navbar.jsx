@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,10 +101,10 @@ export default function Navbar() {
 
       <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="logo">
-          <NavLink to="/" onClick={closeNav}>
-            <h2>AWTAustralia</h2>
+          <Link to="/" onClick={closeNav}>
+            <img src="/image/logo.png" alt="AWTAustralia" className="logo-img" />
             {isContactPage && <span className="logo-tagline">the travel mantra</span>}
-          </NavLink>
+          </Link>
         </div>
 
         {/* Crystal Glass Navigation Drawer */}
@@ -112,7 +112,9 @@ export default function Navbar() {
           {/* Drawer Top Header for Mobile */}
           <div className="drawer-header">
             <div className="drawer-logo">
-              <h2>AWTAustralia</h2>
+              <Link to="/" onClick={closeNav}>
+                <img src="/image/logo.png" alt="AWTAustralia" className="drawer-logo-img" />
+              </Link>
               <span className="drawer-tagline">The Travel Mantra</span>
             </div>
             <button

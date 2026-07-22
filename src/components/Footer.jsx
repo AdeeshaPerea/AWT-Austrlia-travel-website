@@ -6,7 +6,11 @@ export default function Footer() {
     <footer>
       <div class="footer-top">
         <div class="footer-col brand">
-          <div class="logo">AWTAustralia</div>
+          <div class="logo">
+            <Link to="/">
+              <img src="/image/logo.png" alt="AWTAustralia" className="footer-logo-img" />
+            </Link>
+          </div>
           <p class="tagline">the travel mantra</p>
           <p class="desc">
             AWT Australia is your complete travel partner for flights, holidays, cars and unforgettable experiences across Australia, New Zealand and the world.
