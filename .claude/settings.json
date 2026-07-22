@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --screenshot=\"/c/Users/user/AppData/Local/Temp/claude/d--travel-website/eb8a148f-b242-46bd-9137-d10ed7f40c82/scratchpad/index_header.png\" --window-size=390,150 \"file:///d:/travel-website/index.html\")",
+      "Bash(curl -s http://localhost:8792/navtest.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8792/css/style.css)"
+    ]
+  }
+}

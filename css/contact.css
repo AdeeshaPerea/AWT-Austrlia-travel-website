@@ -110,6 +110,10 @@ nav a:hover{
     .logo h2{
         font-size:28px;
     }
+
+    .nav-phone{
+        display:none;
+    }
 }
 
 /* ==========================================
@@ -282,33 +286,6 @@ nav a:hover{
    RESPONSIVE
 ========================================== */
 @media (max-width: 992px) {
-  #siteNav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #0a1c4d;
-    padding: 20px;
-  }
-
-  #siteNav.open {
-    display: block;
-  }
-
-  #siteNav ul {
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .nav-right {
-    display: none;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
   .contact-strip {
     position: static;
     bottom: auto;

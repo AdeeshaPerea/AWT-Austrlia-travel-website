@@ -24,11 +24,10 @@
         </div>
 
         <nav id="siteNav">
-
-            <ul>
-
-                <li><a href="index.html">Home</a></li>
-
+    <button class="nav-close" id="navClose" aria-label="Close menu">&times;</button>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        ...
                 <li><a href="about.html">About</a></li>
 
                 <li><a href="brands.html">Brands</a></li>
@@ -49,6 +48,7 @@
 
         </nav>
 
+
         <button class="btn">Partner With Us</button>
 
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -63,52 +63,39 @@
 
     <!-- Hero -->
 
-    <section class="hero">
+   <section class="hero">
 
-        <video class="hero-video" autoplay muted loop>
-            <source src="image/363061.mp4" type="video/mp4">
-        </video>
+    <!-- Background Image -->
+    <img src="image/home.png" alt="Travel Background" class="hero-image">
 
-        <div class="overlay"></div>
+    <div class="overlay"></div>
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <h1>
+        <h1>
+            Connecting <br>
+            the World <br>
+            <span>Through Travel</span>
+        </h1>
 
-                Connecting <br>
+        <p>
+            Connecting people, places and unforgettable journeys
+            around the world.
+        </p>
 
-                the World <br>
+        <div class="buttons">
+            <button class="discover">
+                Discover Story
+            </button>
 
-                <span>Through Travel</span>
-
-            </h1>
-
-            <p>
-
-                Connecting people, places and unforgettable journeys
-                around the world.
-
-            </p>
-
-            <div class="buttons">
-
-                <button class="discover">
-
-                    Discover Story
-
-                </button>
-
-                <button class="watch">
-
-                    Watch Video
-
-                </button>
-
-            </div>
-
+            <button class="watch">
+                Watch Video
+            </button>
         </div>
 
-    </section>
+    </div>
+
+</section>
 <!-- Statistics -->
 
 <section class="stats">
@@ -238,28 +225,22 @@
         </div>
 
         <!-- TripClub -->
-        <div class="brand-card tripclub" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80');">
-            <div class="brand-logo-top logo-text" style="color: #7C3AED;">
-                <strong>TripClub.com</strong>
-            </div>
+<div class="brand-card tripclub" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=80');">
+    <div class="brand-logo-top logo-text" style="color: #7C3AED;">
+        <strong>Trip<span style="color:#a855f7;">◑</span>Club.com</strong>
+    </div>
 
-            <div class="brand-content-overlay">
-                <h3>TripClub.com</h3>
+    <div class="brand-content-overlay">
+        <ul class="check-list">
+            <li><span class="check">✔</span> Your online travel booking companion</li>
+            <li><span class="check">✔</span> Flights, hotels &amp; packages</li>
+            <li><span class="check">✔</span> Tours, activities &amp; transfers</li>
+            <li><span class="check">✔</span> Exclusive online deals</li>
+        </ul>
 
-                <p>
-                    Your online travel booking companion for flights,
-                    hotels and unforgettable tours.
-                </p>
-
-                <ul class="check-list">
-                    <li><span class="check">✓</span> Flights, hotels &amp; packages</li>
-                    <li><span class="check">✓</span> Tours, activities &amp; transfers</li>
-                    <li><span class="check">✓</span> Exclusive online deals</li>
-                </ul>
-
-                <a href="#">Visit Website</a>
-            </div>
-        </div>
+        <a href="#" class="visit-btn">VISIT WEBSITE <span>→</span></a>
+    </div>
+</div>
 
         <!-- Rentaweel -->
         <div class="brand-card rentaweel" style="background-image:url('https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&q=80');">
@@ -289,8 +270,6 @@
 
 </section>
 
-
-<script src="js/script.js"></script>
 <!-- ================= POPULAR DESTINATIONS ================= -->
 <section class="destinations">
  
@@ -417,52 +396,58 @@
  
 </section>
 
-
+<!-- ===========================
+     SCRIPTS (all consolidated, loaded once, at the very end)
+=========================== -->
 <script>
-const destTrack = document.getElementById('destTrack');
-const destPrev  = document.getElementById('destPrev');
-const destNext  = document.getElementById('destNext');
- 
-function destScrollAmount(){
-    const card = destTrack.querySelector('.dest-card');
-    return card ? card.offsetWidth + 18 : 260;
-}
- 
-destPrev.addEventListener('click', () => {
-    destTrack.scrollLeft -= destScrollAmount();
-});
- 
-destNext.addEventListener('click', () => {
-    destTrack.scrollLeft += destScrollAmount();
-});
- 
-/* Scroll-reveal for cards and trust items */
-const revealTargets = document.querySelectorAll('.dest-card, .trust-item');
- 
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-        if(entry.isIntersecting){
-            const el = entry.target;
-            if(el.classList.contains('dest-card')){
-                const cards = Array.from(destTrack.children);
-                el.style.animationDelay = (cards.indexOf(el) * 0.08) + 's';
-            }
-            el.classList.add('in-view');
-            revealObserver.unobserve(el);
-        }
+document.addEventListener('DOMContentLoaded', () => {
+    const destTrack = document.getElementById('destTrack');
+    const destPrev  = document.getElementById('destPrev');
+    const destNext  = document.getElementById('destNext');
+
+    if (!destTrack || !destPrev || !destNext) {
+        console.warn('Destination carousel elements not found:', {destTrack, destPrev, destNext});
+        return;
+    }
+
+    function destScrollAmount(){
+        const card = destTrack.querySelector('.dest-card');
+        return card ? card.offsetWidth + 18 : 260;
+    }
+
+    function updateDestArrows(){
+        const maxScroll = destTrack.scrollWidth - destTrack.clientWidth;
+        destPrev.disabled = destTrack.scrollLeft <= 1;
+        destNext.disabled = destTrack.scrollLeft >= maxScroll - 1;
+    }
+
+    destPrev.addEventListener('click', () => {
+        destTrack.scrollBy({ left: -destScrollAmount(), behavior: 'smooth' });
     });
-}, { threshold: 0.2 });
- 
-revealTargets.forEach(el => revealObserver.observe(el));
- 
-/* One-time gentle pulse on the next arrow to hint it's interactive */
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        destNext.classList.add('pulse');
-    }, 1200);
+
+    destNext.addEventListener('click', () => {
+        destTrack.scrollBy({ left: destScrollAmount(), behavior: 'smooth' });
+    });
+
+    destTrack.addEventListener('scroll', updateDestArrows);
+    window.addEventListener('resize', updateDestArrows);
+    updateDestArrows();
+
+    /* Scroll-reveal */
+    const revealTargets = document.querySelectorAll('.dest-card, .trust-item');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('in-view');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    revealTargets.forEach(el => revealObserver.observe(el));
+
+    setTimeout(() => destNext.classList.add('pulse'), 1200);
 });
 </script>
-
-
+<script src="js/script.js"></script>
 </body>
 </html>
