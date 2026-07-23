@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../styles/news.css';
 
 export default function News() {
@@ -11,6 +12,27 @@ export default function News() {
   const [toastMessage, setToastMessage] = useState('');
 
   const articlesSectionRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/exhibitions' || location.hash === '#exhibitions') {
+      setActiveCategory('Events & Exhibitions');
+      setTimeout(() => {
+        const el = document.getElementById('events-and-exhibitions');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 150);
+    } else if (location.pathname === '/partnerships' || location.hash === '#partnerships') {
+      setActiveCategory('Partnerships');
+      setTimeout(() => {
+        const el = document.getElementById('partnerships-section');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 150);
+    }
+  }, [location.pathname, location.hash]);
 
   // Gallery Photos for International Exhibitions
   const exhibitionGallery = [
@@ -567,7 +589,7 @@ export default function News() {
 
           {/* Card 4: Events & Exhibitions */}
           {(activeCategory === 'All' || activeCategory === 'Events & Exhibitions') && (
-            <div className="feature-box-card">
+            <div className="feature-box-card" id="events-and-exhibitions">
               <div className="fb-content">
                 <div>
                   <div className="fb-header">
@@ -609,7 +631,7 @@ export default function News() {
 
           {/* Card 5: Partnership Announcements */}
           {(activeCategory === 'All' || activeCategory === 'Partnerships') && (
-            <div className="feature-box-card">
+            <div className="feature-box-card" id="partnerships-section">
               <div className="fb-content">
                 <div>
                   <div className="fb-header">

@@ -459,3 +459,55 @@
     width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  .brands-hero {
+    padding: 95px 16px 35px 16px;
+    min-height: auto;
+  }
+
+  .brands-hero-title {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .brands-hero-sub {
+    font-size: 0.95rem;
+  }
+
+  .brands-container,
+  .value-props-container,
+  .bbb-wrapper {
+    padding: 30px 16px;
+  }
+
+  .brand-card {
+    padding: 20px 16px;
+  }
+
+  .brand-card-title {
+    font-size: 1.35rem;
+  }
+
+  .btn-explore-brand {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bbb-title {
+    font-size: 1.45rem;
+  }
+
+  .bbb-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-bbb-primary,
+  .btn-bbb-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

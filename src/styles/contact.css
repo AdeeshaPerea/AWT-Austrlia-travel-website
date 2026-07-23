@@ -1,109 +1,5 @@
 /* ==========================================
-   GOOGLE FONT & GLOBAL RESETS
-========================================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html, body{
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-    background:#fff;
-    scroll-behavior:smooth;
-    font-family:'Poppins',sans-serif;
-}
-
-img, video, iframe, svg{
-    max-width:100%;
-    height:auto;
-}
-
-a{ text-decoration:none; }
-ul{ list-style:none; }
-
-/* ==========================================
-   NAVBAR
-========================================== */
-.navbar{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 80px;
-    z-index:999;
-}
-
-.logo h2{
-    color:white;
-    font-size:36px;
-    font-weight:700;
-}
-
-.logo-tagline{
-    display:block;
-    color:#FFC400;
-    font-size:12px;
-    letter-spacing:1px;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:35px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    transition:.3s;
-}
-
-nav a:hover, nav a.active{
-    color:#FFC400;
-}
-
-.nav-right{
-    display:flex;
-    align-items:center;
-    gap:20px;
-}
-
-.nav-phone{
-    color:white;
-    font-weight:600;
-    font-size:14px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.btn{
-    background:#FFC400;
-    color:#0A2C67;
-    border:none;
-    padding:14px 28px;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:600;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#fff;
-    transform:translateY(-2px);
-}
-
-/* ==========================================
-   HERO
+   CONTACT PAGE STYLES
 ========================================== */
 .about-hero {
   position: relative;
@@ -302,56 +198,8 @@ nav a:hover, nav a.active{
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 18px 20px;
-  }
-
-  .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    z-index: 1001;
-  }
-
-  #siteNav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 320px;
-    height: 100vh;
-    background: #0A2C67;
-    transition: right 0.4s ease;
-    padding: 90px 25px 40px;
-    box-shadow: -5px 0 25px rgba(0,0,0,0.3);
-    z-index: 1000;
-    overflow-y: auto;
-  }
-
-  #siteNav.active {
-    right: 0;
-  }
-
-  #siteNav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  #siteNav a {
-    display: block;
-    padding: 10px 0;
-    font-size: 16px;
-    min-height: 44px;
-  }
-
-  .nav-right {
-    display: none;
-  }
-
   .hero-content h4 { font-size: 14px; }
-  .hero-content h1 { font-size: clamp(26px, 7vw, 36px); }
+  .hero-content h1 { font-size: clamp(24px, 6.5vw, 36px); }
 }
 
 @media (max-width: 600px) {
@@ -731,7 +579,7 @@ nav a:hover, nav a.active{
 
 .contact-form-col,
 .office-info-col{
-    padding:25px;
+    padding:25px 18px;
 }
 
 .form-row{
@@ -746,7 +594,31 @@ nav a:hover, nav a.active{
 
 .contact-form-col h2,
 .office-info-col h2{
-    font-size:28px;
+    font-size:24px;
+}
+
+}
+
+@media(max-width:480px){
+
+.contact-form-col,
+.office-info-col{
+    padding:20px 14px;
+}
+
+.contact-form-col h2,
+.office-info-col h2{
+    font-size:20px;
+}
+
+.submit-btn{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+}
+
+.office-image-col{
+    height:220px;
 }
 
 }
@@ -1310,19 +1182,44 @@ nav a:hover, nav a.active{
     color: #4a5578;
   }
  
-  @media (max-width: 700px) {
-    footer { padding: 30px 20px 0; }
+  .footer-col.contact ul li span {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  @media (max-width: 900px) {
+    footer { padding: 35px 30px 0; }
     .footer-top {
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 25px;
     }
-    .footer-col {
-      width: 100%;
-      min-width: 0;
+    .footer-col.brand {
+      grid-column: span 2;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    footer { padding: 30px 16px 0; }
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .footer-col.brand {
+      grid-column: span 1;
     }
     .footer-bottom {
       flex-direction: column;
       align-items: flex-start;
       gap: 15px;
+      padding: 16px 0 24px;
+    }
+    .legal {
+      font-size: 12px;
+      gap: 8px;
+    }
+    .legal .divider {
+      display: inline;
     }
   }

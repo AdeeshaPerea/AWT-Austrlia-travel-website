@@ -80,7 +80,7 @@ export default function Home() {
             class="brand-card awt"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&q=80')"
+                "url('/image/sustainability_mountain_peak.webp')"
             }}
           >
             <div class="brand-logo-top">
@@ -110,7 +110,7 @@ export default function Home() {
             class="brand-card flightroo"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=500&q=80')"
+                "url('/image/global_travel_airplane.webp')"
             }}
           >
             <div class="brand-logo-top logo-text">
@@ -135,7 +135,7 @@ export default function Home() {
           <div
             class="brand-card tripclub"
             style={{
-              backgroundImage: "url('/image/Tripoclub.webp')"
+              backgroundImage: "url('/image/image-1.webp')"
             }}
           >
             <div class="brand-logo-top logo-text" style={{ color: '#7C3AED' }}>
@@ -156,12 +156,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Rentaweel */}
+          {/* Rentawheel */}
           <div
             class="brand-card rentaweel"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&q=80')"
+                "url('/image/rentawheel_car.webp')"
             }}
           >
             <div class="brand-logo-top logo-text" style={{ color: '#F07D1A' }}>
@@ -169,7 +169,7 @@ export default function Home() {
             </div>
 
             <div class="brand-content-overlay">
-              <h3>Rentaweel.com</h3>
+              <h3>Rentawheel</h3>
               <p>
                 Car rentals and ground travel solutions wherever your journey takes you.
               </p>

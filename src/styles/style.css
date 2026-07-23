@@ -6,7 +6,8 @@
 }
 
 html,
-body {
+body,
+#root {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -1418,32 +1419,6 @@ nav a.active {
         padding: 10px 0 !important;
     }
 
-    /* About hero mobile padding - clear top space so heading never overlaps navbar/logo */
-    .about-hero {
-        padding: 140px 20px 60px;
-        height: auto;
-        min-height: auto;
-        align-items: flex-start;
-    }
-
-    .about-hero-content {
-        max-width: 100%;
-    }
-
-    .about-hero-content h1 {
-        font-size: 48px;
-        line-height: 1.05;
-        margin: 0 0 20px;
-    }
-
-    .about-subtitle {
-        font-size: clamp(18px, 4.5vw, 24px);
-    }
-
-    .about-hero-content p {
-        font-size: 16px;
-    }
-
     /* News heading size at tablet */
     .news-text h3 {
         font-size: clamp(16px, 3vw, 22px);
@@ -1460,15 +1435,6 @@ nav a.active {
 
     .trust-bar {
         grid-template-columns: 1fr;
-    }
-
-    .about-hero {
-        padding: 135px 16px 50px;
-    }
-
-    .about-hero-content h1 {
-        font-size: 42px;
-        line-height: 1.05;
     }
 }
 
@@ -1617,6 +1583,58 @@ nav a.active {
 
 .about-hero-content .watch i {
     font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 130px 24px 60px;
+        height: auto;
+        min-height: auto;
+        align-items: flex-start;
+    }
+
+    .about-hero-content {
+        max-width: 100%;
+    }
+
+    .about-hero-content h1 {
+        font-size: 38px;
+        line-height: 1.1;
+        margin-bottom: 16px;
+    }
+
+    .about-subtitle {
+        font-size: clamp(16px, 4.5vw, 22px);
+        margin-bottom: 20px;
+    }
+
+    .about-hero-content p {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .about-hero-content .buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .about-hero-content .discover,
+    .about-hero-content .watch {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        padding: 120px 16px 50px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 32px;
+    }
 }
 
 

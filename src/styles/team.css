@@ -1,0 +1,643 @@
+/* ==========================================================================
+   AWT AUSTRALIA - OUR TEAM PAGE STYLESHEET (With Scroll Reveal & CSS Animations)
+   ========================================================================== */
+
+.team-page {
+  background: #f8fafc;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* --- Hero Section (Matches Newsroom & About Dark Navy Hero) --- */
+.team-hero {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  background: #081636 url('/image/team_group_photo.webp') center right / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 120px 80px 60px 80px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.team-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+    #081636 0%, 
+    rgba(8, 22, 54, 0.95) 45%, 
+    rgba(8, 22, 54, 0.8) 68%, 
+    rgba(8, 22, 54, 0.35) 88%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.team-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.team-hero-content {
+  max-width: 650px;
+  text-align: left;
+  animation: heroFadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team-hero-title {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
+  animation: titleGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% { text-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+  100% { text-shadow: 0 0 15px rgba(0, 180, 216, 0.3); }
+}
+
+.team-hero-subtitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.96;
+  animation: heroFadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+}
+
+.team-hero-red-line {
+  width: 48px;
+  height: 4px;
+  background-color: #ef4444;
+  margin-bottom: 18px;
+  border-radius: 2px;
+  animation: expandRedLine 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+}
+
+@keyframes expandRedLine {
+  0% { width: 0px; }
+  100% { width: 48px; }
+}
+
+.team-hero-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: heroFadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s backwards;
+}
+
+.team-hero-paragraphs p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  font-weight: 400;
+  max-width: 620px;
+  margin: 0;
+}
+
+/* --- Main Content Container --- */
+.team-main-container {
+  max-width: 1240px;
+  margin: 50px auto 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Scroll-Reveal System ---------------------------------------------
+   Elements start hidden/offset and animate in once they enter the
+   viewport. JS toggles `.in-view` (see Team.jsx). `--reveal-delay`
+   lets each element stagger its own entrance.
+   ------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-hero-content,
+  .team-hero-subtitle,
+  .team-hero-red-line,
+  .team-hero-paragraphs,
+  .executive-message-section,
+  .exec-subtitle-role i,
+  .exec-quote-icon,
+  .team-hero-title,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    width: auto !important;
+  }
+}
+
+/* --- Executive Message Section (Glen Fernando) --- */
+.executive-message-section {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  padding: 45px 50px;
+  margin-bottom: 50px;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease,
+              opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.executive-message-section:hover {
+  box-shadow: 0 18px 40px rgba(10, 25, 60, 0.08);
+  border-color: #cbd5e1;
+}
+
+.exec-header-badge {
+  color: #ef4444;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.executive-message-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0a193c;
+  margin-bottom: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.exec-subtitle-role {
+  color: #00b4d8;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exec-subtitle-role i {
+  animation: pulseIcon 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); color: #ef4444; }
+}
+
+.exec-card-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 45px;
+  align-items: flex-start;
+}
+
+.exec-portrait-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.exec-portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgba(10, 25, 60, 0.15);
+  border: 3px solid #ffffff;
+  background: #0a193c;
+  margin-bottom: 16px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.exec-portrait-frame:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(0, 180, 216, 0.25);
+}
+
+.exec-portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.exec-portrait-frame:hover img {
+  transform: scale(1.06);
+}
+
+.exec-badge-tag {
+  background: #0a193c;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid rgba(0, 180, 216, 0.3);
+  transition: background 0.3s, color 0.3s;
+}
+
+.exec-portrait-column:hover .exec-badge-tag {
+  background: #00b4d8;
+  color: #ffffff;
+}
+
+.exec-name-title {
+  margin-top: 10px;
+}
+
+.exec-name-title h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+}
+
+.exec-name-title p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Quote Message Text Body */
+.exec-quote-body {
+  position: relative;
+  background: #f8fafc;
+  border-radius: 18px;
+  padding: 35px 40px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.35s ease;
+}
+
+.exec-quote-body:hover {
+  background: #ffffff;
+  border-color: #00b4d8;
+  box-shadow: 0 10px 25px rgba(0, 180, 216, 0.1);
+}
+
+.exec-quote-icon {
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #00b4d8;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  animation: quoteFloat 3s ease-in-out infinite;
+}
+
+@keyframes quoteFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.exec-quote-text {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #334155;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exec-quote-text p {
+  margin: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.executive-message-section.in-view .exec-quote-text p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.executive-message-section .exec-quote-text p:nth-child(1) { transition-delay: 0.15s; }
+.executive-message-section .exec-quote-text p:nth-child(2) { transition-delay: 0.3s; }
+.executive-message-section .exec-quote-text p:nth-child(3) { transition-delay: 0.45s; }
+.executive-message-section .exec-quote-text p:nth-child(4) { transition-delay: 0.6s; }
+.executive-message-section .exec-quote-text p:nth-child(5) { transition-delay: 0.75s; }
+
+.exec-signature-block {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.signature-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0a193c;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.signature-role {
+  font-size: 0.85rem;
+  color: #ef4444;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* --- Team Culture Showcase Section --- */
+.team-culture-section {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  padding: 45px 50px;
+  margin-bottom: 50px;
+}
+
+.culture-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 35px auto;
+}
+
+.culture-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0a193c;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.culture-header p {
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Team Group Photo Display */
+.group-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+  border: 1px solid #e2e8f0;
+}
+
+.group-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group-photo-wrap:hover img {
+  transform: scale(1.04);
+}
+
+.group-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(10, 25, 60, 0.94) 0%, rgba(10, 25, 60, 0) 100%);
+  padding: 35px 30px 22px 30px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateY(12px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.group-photo-wrap:hover .group-photo-caption,
+.group-photo-wrap.in-view .group-photo-caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.group-photo-caption h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: #ffffff;
+}
+
+.group-photo-caption p {
+  color: #00b4d8;
+  font-size: 0.88rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* 4 Culture Values Cards (Interactive Flip/Glow Hover) */
+.culture-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.culture-value-card {
+  position: relative;
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 26px 22px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Diagonal light sweep on hover */
+.culture-value-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(0, 180, 216, 0.12), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+
+.culture-value-card:hover::after {
+  left: 130%;
+}
+
+.culture-value-card:hover {
+  transform: translateY(-6px);
+  background: #ffffff;
+  border-color: #00b4d8;
+  box-shadow: 0 12px 25px rgba(0, 180, 216, 0.15);
+}
+
+.cv-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #0a193c;
+  color: #00b4d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+  transition: all 0.35s ease;
+}
+
+.culture-value-card:hover .cv-icon {
+  background: #ef4444;
+  color: #ffffff;
+  transform: rotate(6deg) scale(1.1);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.culture-value-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  transition: color 0.25s ease;
+}
+
+.culture-value-card:hover h4 {
+  color: #00b4d8;
+}
+
+.culture-value-card p {
+  color: #64748b;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .exec-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .exec-portrait-frame {
+    max-width: 280px;
+    height: 300px;
+  }
+  .culture-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-hero {
+    padding: 110px 20px 45px 20px;
+    min-height: 380px;
+  }
+  .team-hero-title {
+    font-size: 2.2rem;
+  }
+  .executive-message-section,
+  .team-culture-section {
+    padding: 30px 20px;
+  }
+  .group-photo-wrap {
+    height: 260px;
+  }
+  .culture-values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-hero {
+    padding: 95px 16px 35px 16px;
+    min-height: auto;
+  }
+
+  .team-hero-title {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .executive-message-section,
+  .team-culture-section {
+    padding: 25px 16px;
+  }
+
+  .exec-card {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .exec-portrait-frame {
+    max-width: 220px;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  .exec-details-col h3 {
+    font-size: 1.35rem;
+  }
+
+  .group-photo-wrap {
+    height: 220px;
+  }
+
+  .group-photo-caption {
+    padding: 20px 16px 16px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .culture-value-card {
+    padding: 20px 16px;
+  }
+}

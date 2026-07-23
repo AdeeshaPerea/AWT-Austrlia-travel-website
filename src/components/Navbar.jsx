@@ -103,7 +103,6 @@ export default function Navbar() {
         <div className="logo">
           <Link to="/" onClick={closeNav}>
             <img src="/image/logo.webp" alt="AWTAustralia" className="logo-img" />
-            {isContactPage && <span className="logo-tagline">the travel mantra</span>}
           </Link>
         </div>
 
