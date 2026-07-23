@@ -102,7 +102,7 @@ export default function Navbar() {
       <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="logo">
           <Link to="/" onClick={closeNav}>
-            <img src="/image/logo.png" alt="AWTAustralia" className="logo-img" />
+            <img src="/image/logo.webp" alt="AWTAustralia" className="logo-img" />
             {isContactPage && <span className="logo-tagline">the travel mantra</span>}
           </Link>
         </div>
@@ -113,7 +113,7 @@ export default function Navbar() {
           <div className="drawer-header">
             <div className="drawer-logo">
               <Link to="/" onClick={closeNav}>
-                <img src="/image/logo.png" alt="AWTAustralia" className="drawer-logo-img" />
+                <img src="/image/logo.webp" alt="AWTAustralia" className="drawer-logo-img" />
               </Link>
               <span className="drawer-tagline">The Travel Mantra</span>
             </div>

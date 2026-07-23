@@ -8,7 +8,7 @@ export default function Footer() {
         <div class="footer-col brand">
           <div class="logo">
             <Link to="/">
-              <img src="/image/logo.png" alt="AWTAustralia" className="footer-logo-img" />
+              <img src="/image/logo.webp" alt="AWTAustralia" className="footer-logo-img" />
             </Link>
           </div>
           <p class="tagline">the travel mantra</p>

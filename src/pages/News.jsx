@@ -667,7 +667,7 @@ export default function News() {
                     Technology is transforming the travel experience. Through our brands including <strong>TripoClub</strong>, our online booking platform, and <strong>FlightRoo</strong>, our retail flight network we continue investing in smarter digital solutions.
                   </p>
                   <div className="fb-brand-logos">
-                    <img src="/image/brand_tripoclub_logo.webp" alt="TripoClub" className="fb-brand-logo-img" onError={(e) => { e.target.style.display = 'none'; }} />
+                    <img src="/image/Tripoclub.webp" alt="TripoClub" className="fb-brand-logo-img" />
                     <img src="/image/brand_flightroo_logo.webp" alt="FlightRoo" className="fb-brand-logo-img" />
                     <img src="/image/brand_rentawheel_logo.webp" alt="Rentawheel" className="fb-brand-logo-img" onError={(e) => { e.target.style.display = 'none'; }} />
                   </div>

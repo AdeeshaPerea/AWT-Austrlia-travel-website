@@ -229,7 +229,7 @@ export default function Contact() {
 
           {/* Right: Office Image */}
           <div class="office-image-col">
-            <img src="/image/office-reception.jpg" alt="AWTAustralia Head Office Reception" />
+            <img src="/image/office-reception.webp" alt="AWTAustralia Head Office Reception" />
           </div>
         </div>
       </section>

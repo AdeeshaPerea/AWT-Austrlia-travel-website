@@ -6,10 +6,12 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import News from './pages/News';
+import Brands from './pages/Brands';
 
 import './styles/style.css';
 import './styles/contact.css';
 import './styles/news.css';
+import './styles/brands.css';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,7 +34,8 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/news" element={<News />} />
-          {/* Fallback to Home for other links like /brands, etc. */}
+          <Route path="/brands" element={<Brands />} />
+          {/* Fallback to Home */}
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

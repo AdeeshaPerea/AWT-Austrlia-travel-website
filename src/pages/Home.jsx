@@ -6,9 +6,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section class="hero">
-        <video class="hero-video" autoPlay muted loop playsInline poster="/image/home.png">
-          <img src="/image/home.png" alt="AWT Australia Hero" class="hero-video" />
-        </video>
+        <img src="/image/home.webp" alt="AWT Australia Hero" class="hero-video" />
 
         <div class="overlay"></div>
 
@@ -137,7 +135,7 @@ export default function Home() {
           <div
             class="brand-card tripclub"
             style={{
-              backgroundImage: "url('/image/tripoclub.jpeg')"
+              backgroundImage: "url('/image/Tripoclub.webp')"
             }}
           >
             <div class="brand-logo-top logo-text" style={{ color: '#7C3AED' }}>
