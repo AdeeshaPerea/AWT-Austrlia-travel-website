@@ -48,18 +48,18 @@ svg {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 80px;
+    padding: 12px 80px;
     z-index: 999;
     transition: all 0.35s ease;
 }
 
 .navbar.scrolled {
-    background: rgba(10, 25, 60, 0.85);
+    background: rgba(10, 25, 60, 0.92);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    padding: 15px 80px;
+    padding: 10px 80px;
 }
 
 .logo a {
@@ -69,31 +69,37 @@ svg {
 }
 
 .logo-img {
-    height: 100px;
+    height: 125px;
     width: auto;
-    max-width: 280px;
+    max-width: 320px;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 16px rgba(0, 180, 216, 0.4));
 }
 
 .drawer-logo-img {
-    height: 56px;
+    height: 75px;
     width: auto;
-    max-width: 240px;
+    max-width: 280px;
     object-fit: contain;
     display: block;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 .footer-logo-img {
-    height: 72px;
+    height: 95px;
     width: auto;
-    max-width: 280px;
+    max-width: 320px;
     object-fit: contain;
     display: block;
     margin-bottom: 12px;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
 }
 
 .logo h2 {
