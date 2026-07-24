@@ -75,7 +75,7 @@ export default function News() {
     // 1. Sustainability
     {
       id: 1,
-      title: "AWT Australia & Tourism Australia Launch Sustainable Great Barrier Reef Charter Fleet",
+      title: "Australian Tourism Launches Sustainable Great Barrier Reef Charter Fleet",
       category: "Sustainability",
       date: "July 18, 2025",
       readTime: "4 min read",
@@ -85,7 +85,7 @@ export default function News() {
       excerpt: "A landmark joint initiative introducing hybrid-electric luxury catamarans equipped with solar tech, reducing marine emissions by 45% across North Queensland.",
       spotlight: true,
       fullContent: `
-        <p>AWT Australia is proud to announce a groundbreaking multi-million dollar partnership with Tourism Australia to launch a new generation of net-zero marine expedition vessels operating across the Great Barrier Reef.</p>
+        <p>Australian Tourism is proud to announce a groundbreaking multi-million dollar initiative to launch a new generation of net-zero marine expedition vessels operating across the Great Barrier Reef.</p>
         <p>Equipped with advanced hybrid-electric propulsion, solar glass skin arrays, and onboard micro-waste recycling units, the new fleet reduces carbon emissions by 45% compared to traditional diesel catamarans while preserving fragile reef ecosystems.</p>
       `
     },
@@ -225,7 +225,7 @@ export default function News() {
     },
     {
       id: 11,
-      title: "AWT & Tourism Australia Announce Joint Regional Promotion Program for 2025/2026",
+      title: "Australian Tourism Announces Joint Regional Promotion Program for 2025/2026",
       category: "Partnerships",
       date: "May 04, 2025",
       readTime: "3 min read",
@@ -617,8 +617,8 @@ export default function News() {
                     <div className="fb-bullet-item" onClick={() => handleTagFilterClick('Australian Tourism Exchange')}>
                       <i className="fa-solid fa-circle-check"></i> Australian Tourism Exchange
                     </div>
-                    <div className="fb-bullet-item" onClick={() => handleTagFilterClick('Tourism Australia')}>
-                      <i className="fa-solid fa-circle-check"></i> Tourism Australia events
+                    <div className="fb-bullet-item" onClick={() => handleTagFilterClick('Australian Tourism')}>
+                      <i className="fa-solid fa-circle-check"></i> Australian Tourism events
                     </div>
                   </div>
                 </div>
